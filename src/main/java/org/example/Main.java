@@ -10,13 +10,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner iScanner = new Scanner(System.in);
-        Map<String, Integer> phones = new HashMap<>();
-                while(true) {
+        Map<Integer, String> phones = new HashMap<>();
+        while(true) {
+            System.out.println("Доступные команды: Add; Print; Q");
             String str = iScanner.nextLine();
             if (str.equals("Q")) {
                 iScanner.close();
                 break;
-                }
+            }
             else if (str.equals("Add")) addPhone(phones);
             else if (str.equals("Print")) printPhones();
             else System.out.println("Неизвестная команда. Повторите ввод.");
@@ -24,37 +25,24 @@ public class Main {
         System.out.println("Thanks!");
     }
 
-    public static void addPhone(Map<String, Integer> phones) {
+    public static void addPhone(Map<Integer, String> phones) {
         Scanner iScanner = new Scanner(System.in);
-//        String str = iScanner.nextLine();
-//        String[] strArray = iScanner.nextLine().split("-");
-        System.out.println("Введите имя-телефон");
+        System.out.println("Введите телефон-Имя");
         String[] strArray = "-".split(iScanner.nextLine());
-        String name = strArray[0];
-        Integer phone = Integer.parseInt(strArray[1]);
-//        phones<>
+        Integer phone = Integer.parseInt(strArray[0]);
+        String name = strArray[1];
 
-        phones.cont
-        for (var el : phones.entrySet()) {
-            if (el.getValue().equals("Иванов")) {
-                System.out.print(el.getKey() + ": " + el.getValue() + "\n");
-            }
+        if (phones.containsKey(phone))
+            System.out.print("Такой телефон существует.");
+        else phones.put(phone,name);
+        iScanner.close();
+    }
+    public static void printPhones(Map<String, Integer> phones) {
+        for (var map : phones) {
+
+            System.out.print("Такой телефон существует.");
         }
     }
 
-        //            if (name.equals("print")) {
-//        System.out.println(names.get(index));
-//        names.remove(index);
-//    }
-//            else if (index > names.size()) {
-//        for (int i = names.size(); i < index; i++){
-//            names.add(i, null);
-//        }
-//        names.add(index, name);
-//    }
-//            else names.add(index, name);
-
-
-    public static void printPhones() {}
 
 }
