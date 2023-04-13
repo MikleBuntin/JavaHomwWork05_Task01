@@ -37,13 +37,10 @@ public class Main {
         while(true) {
             System.out.println("Введите телефон: ");
             String str = iScanner.nextLine();
-            Integer tel = null;
             if (str.equals("Q")) {
-                iScanner.close();
                 break;
             }
-            tel = Integer.valueOf(str);
-            phone.add(tel);
+            phone.add(str);
             System.out.println("Q - сохранить и выйти");
         }
 
@@ -57,7 +54,7 @@ public class Main {
     }
     public static void printPhones(HashMap<Person, Phone> phoneBook) {
         for (Person person : phoneBook.keySet()) {
-            System.out.print("Name: " + person.getName() + " " + person.getSurname() + "; ");
+            System.out.println("Name: " + person.getName() + " " + person.getSurname() + "; ");
             phoneBook.get(person).print();
 
         }

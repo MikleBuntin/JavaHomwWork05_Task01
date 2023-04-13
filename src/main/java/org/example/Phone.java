@@ -3,16 +3,16 @@ package org.example;
 import java.util.ArrayList;
 
 public class Phone {
-    private ArrayList<Integer> phones;
+    private ArrayList<String> phones = new ArrayList<>();
 
-    public void add(Integer phone) {
+    public void add(String phone) {
         phones.add(phone);
     }
 
     public void print() {
-        System.out.print("phones:");
-        for (Integer tel : phones) {
-            System.out.print(tel + ";");
+        System.out.println("phones:");
+        for (String tel : phones) {
+            System.out.println(tel + ";");
         }
     }
 }
